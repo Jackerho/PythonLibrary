@@ -1,0 +1,23 @@
+from collections import Counter
+#统计字符串
+# top n问题
+user_counter = Counter("abbafafpskaag")
+print(user_counter.most_common(3)) #[('a', 5), ('b', 2), ('f', 2)]
+print(user_counter['a']) # 5
+
+
+def most_common(self, n=None):
+        '''List the n most common elements and their counts from the most
+        common to the least.  If n is None, then list all element counts.
+        >>> Counter('abcdeabcdabcaba').most_common(3)
+        [('a', 5), ('b', 4), ('c', 3)]
+        '''
+        # Emulate Bag.sortedByCount from Smalltalk
+        if n is None:
+            return sorted(self.items(), key=_itemgetter(1), reverse=True)
+这里用到了个 _heapq 堆数据结构 也就是说它是堆来解决top n问题的，而不是遍历。
+
+总结：most_common()函数用来实现Top n 功能
+————————————————
+版权声明：本文为CSDN博主「dev_zyx」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zyx_ly/java/article/details/88202672
