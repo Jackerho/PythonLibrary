@@ -1,0 +1,18 @@
+python是跨平台的。在Windows上，文件的路径分隔符是'\'，在Linux上是'/'。
+
+为了让代码在不同的平台上都能运行，那么路径应该写'\'还是'/'呢？
+
+使用os.sep的话，就不用考虑这个了，os.sep根据你所处的平台，自动采用相应的分隔符号。
+
+举例
+
+Linux下一个路径，/usr/share/python,那么上面的os.sep就是‘/’
+
+windows下一个路径，C：\Users\Public\Desktop,那么上面的os.sep就是‘\’.
+
+e.g: System in Linux
+>>>import os
+>>>a = os.sep
+>>>print(a)
+/
+>>>
